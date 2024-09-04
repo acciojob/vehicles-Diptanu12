@@ -7,7 +7,7 @@ public class F1 extends Car {
     }
 
     @Override
-    public void changeSpeed(int speed) {
+    public void changeSpeed(int speed, int direction) {
         int newGear = 1;
         if (speed > 250) newGear = 6;
         else if (speed > 200) newGear = 5;
@@ -16,6 +16,6 @@ public class F1 extends Car {
         else if (speed > 50) newGear = 2;
 
         changeGear(newGear);
-        super.changeSpeed(speed); // Calls the superclass method
+        super.changeSpeed(speed, direction);
     }
 }
