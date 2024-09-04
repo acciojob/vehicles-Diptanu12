@@ -9,7 +9,6 @@ public class Car extends Vehicle {
     private String type;
     private int seats;
 
-    // Updated constructor
     public Car(String name, int wheels, int doors, int gears, boolean isManual, String type, int seats) {
         super(name);
         this.wheels = wheels;
@@ -29,8 +28,9 @@ public class Car extends Vehicle {
         return currentGear;
     }
 
-    // Updated method signature to match usage
-    public void changeSpeed(int speed) {
-        super.changeSpeed(speed, getCurrentDirection()); // Calls the superclass method
+    // Override to match the parent class method
+    @Override
+    public void changeSpeed(int speed, int direction) {
+        super.changeSpeed(speed, direction);
     }
 }
