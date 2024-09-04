@@ -27,6 +27,7 @@ public class Vehicle {
         this.currentDirection = direction;
     }
 
+    // Method signature updated to match usage
     public void changeSpeed(int speed, int direction) {
         this.currentSpeed = speed;
         this.currentDirection = direction;
