@@ -18,9 +18,4 @@ public class Boat implements WaterVehicle {
     public int getVehicleCapacity() {
         return capacity;
     }
-
-    @Override
-    public String toString() {
-        return "Boat{name='" + name + "', capacity=" + capacity + '}';
-    }
 }
