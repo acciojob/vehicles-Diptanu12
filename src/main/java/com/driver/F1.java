@@ -6,27 +6,16 @@ public class F1 extends Car {
         super(name, 4, 2, 6, isManual, "Race", 1);
     }
 
-    public void accelerate(int rate){
-        int newSpeed = getCurrentSpeed() + rate;
+    @Override
+    public void changeSpeed(int speed) {
+        int newGear = 1;
+        if (speed > 250) newGear = 6;
+        else if (speed > 200) newGear = 5;
+        else if (speed > 150) newGear = 4;
+        else if (speed > 100) newGear = 3;
+        else if (speed > 50) newGear = 2;
 
-        if(newSpeed == 0) {
-            changeGear(1);
-        } else if(newSpeed >= 1 && newSpeed <= 50) {
-            changeGear(1);
-        } else if(newSpeed > 50 && newSpeed <= 100) {
-            changeGear(2);
-        } else if(newSpeed > 100 && newSpeed <= 150) {
-            changeGear(3);
-        } else if(newSpeed > 150 && newSpeed <= 200) {
-            changeGear(4);
-        } else if(newSpeed > 200 && newSpeed <= 250) {
-            changeGear(5);
-        } else if(newSpeed > 250) {
-            changeGear(6);
-        }
-
-        if(newSpeed > 0) {
-            changeSpeed(newSpeed, getCurrentDirection());
-        }
+        changeGear(newGear);
+        super.changeSpeed(speed); // Calls the superclass method
     }
 }
