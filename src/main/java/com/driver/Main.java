@@ -2,7 +2,6 @@ package com.driver;
 
 public class Main {
     public static void main(String[] args) {
-        // Create instances of Vehicle, Car, and F1
         Vehicle vehicle = new Vehicle("Generic Vehicle");
         Car car = new Car("Sedan", 4, 4, 5, true, "Luxury", 5);
         F1 f1 = new F1("Ferrari", true);
@@ -20,17 +19,17 @@ public class Main {
         // Using Car
         System.out.println("\nCar:");
         car.changeGear(3); // Change gear
-        car.changeSpeed(80); // Change speed
+        car.changeSpeed(80, 45); // Change speed and direction
         System.out.println("Car Speed: " + car.getCurrentSpeed());
         System.out.println("Car Direction: " + car.getCurrentDirection());
         System.out.println("Car Current Gear: " + car.getCurrentGear());
 
         // Using F1
         System.out.println("\nF1:");
-        f1.changeSpeed(70); // Accelerate F1 car
+        f1.changeSpeed(70, 45); // Accelerate F1 car
         System.out.println("F1 Speed: " + f1.getCurrentSpeed());
         System.out.println("F1 Direction: " + f1.getCurrentDirection());
-        f1.changeSpeed(20); // Accelerate F1 car to a lower speed
+        f1.changeSpeed(20, 45); // Accelerate F1 car to a lower speed
         System.out.println("F1 Speed after slowing down: " + f1.getCurrentSpeed());
     }
 }
